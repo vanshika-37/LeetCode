@@ -9,12 +9,10 @@
  */
 class Solution {
 public:
-    int n = 0;
     void dfs(TreeNode* root, unordered_map<TreeNode*,TreeNode*>&mp){
         if (!root) return;
         if (root->left) mp[root->left] = root;
         if (root->right) mp[root->right] = root;
-        n++;
         dfs(root->left,mp);
         dfs(root->right,mp);
     }
